@@ -1,1 +1,15 @@
+tmp/*
+!tmp/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+__pycache__/
+*$py.class
+.pytest_cache
+
+# Virtual environment
 venv
+
+# Environment variables
+.env
