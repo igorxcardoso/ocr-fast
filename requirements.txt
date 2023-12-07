@@ -3,3 +3,6 @@ opencv-python==4.8.1.78
 packaging==23.2
 Pillow==10.1.0
 pytesseract==0.3.10
+ipython==8.18.1
+python-dotenv==1.0.0
+flask==3.0.0
