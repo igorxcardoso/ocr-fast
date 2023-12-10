@@ -1,7 +1,6 @@
 from app import api
 from flask import jsonify, request
 from app.services.s3.s3 import S3
-import boto3
 
 @api.route('/upload', methods=['POST'])
 def upload():
@@ -10,6 +9,6 @@ def upload():
     file = body.get('file')
     file_type = body.get('type')
     file_name = body.get('name')
-    s3.upload(file, file_name)
+    s3.upload(file, file_name, file_type)
 
     return jsonify({'upload': 'upload'})
