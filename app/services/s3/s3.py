@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv, find_dotenv
 import base64
 from io import BytesIO
-
+from datetime import datetime
 
 load_dotenv(find_dotenv())
 
@@ -27,4 +27,5 @@ class S3:
             self.s3.upload_fileobj(file_stream, self.bucket_name, f"{self.base_path}/{file_name}")
 
     def download(self, file) -> None:
-        pass
+        current_data = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.s3.download_file(self.bucket_name, file, f'/img/file_{current_data}.{file.split(".")[-1]}')
